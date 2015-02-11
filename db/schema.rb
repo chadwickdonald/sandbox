@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207235135) do
+ActiveRecord::Schema.define(version: 20150211055440) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "appointment_date"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 20150207235135) do
   end
 
   create_table "employees", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "labs", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,6 +80,16 @@ ActiveRecord::Schema.define(version: 20150207235135) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "scientists", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.integer  "lab_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "scientists", ["lab_id"], name: "index_scientists_on_lab_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"

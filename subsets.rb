@@ -22,7 +22,7 @@ numbers = [1,2,3,4,6]
 #numbers = [3,4,9,14,15,19,28,37,47,50,54,56,59,61,70,73,78,81,92,95,97,99]
 
 #puts "subsets: #{find_subsets(numbers)}"
-
+# need to redo this using recursive method
 
 
 def find_subsets_recursive(numbers, j=0, prev_sum=0)
